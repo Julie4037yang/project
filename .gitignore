@@ -1,0 +1,11 @@
+# Maven target 資料夾
+target/
+# 編譯檔案
+*.class
+# 系統檔案
+.DS_Store
+Thumbs.db
+# 憑證或敏感檔案
+application.properties
+application.yml
+$Recycle.Bin/

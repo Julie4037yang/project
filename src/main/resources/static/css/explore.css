@@ -1,0 +1,146 @@
+/* Header 設定 */
+.header {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;             
+    padding: 5px 20px;
+    background-color: #f4f4f4;       
+    width: 100%;
+    box-sizing: border-box;          
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* 標題文字 */
+.title {
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;   
+    overflow: visible;     
+    text-overflow: clip;   
+    flex-grow: 1;           
+}
+
+/* 讓標題可以點擊 */
+.title a {
+    text-decoration: none; 
+    color: #555;
+}
+
+.title a:hover {
+    text-decoration: underline; /* 滑鼠懸停效果 */
+}
+
+/* 按鈕樣式 */
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    flex-shrink: 0;  /* 防止按鈕縮小 */
+}
+
+.button.active {
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+}
+
+.button:hover {
+    background-color: rgb(226, 238, 252);
+}
+
+/* 按鈕區域設置 */
+.header div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* 內容區域設置 */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 讓子元素（如分隔線）居中對齊 */
+    justify-content: flex-start;  /* 向上對齊 */
+    padding: 20px; /* 調整上下邊距 */
+    min-height: 100vh; /* 使內容區域至少填滿整個視口高度 */
+}
+
+/* "所有活動" 標題設定 */
+.heading {
+    font-size: 28px; /* 放大探索活動字樣 */
+    margin: 60px 0 30px 30px; /* 向下移動並增加間距 */
+    width: 100%;  /* 使標題橫跨整個寬度 */
+    text-align: left; /* 確保標題靠左對齊 */
+}
+
+/* 灰色水平分隔線 */
+.divider {
+    border: 1px solid #ccc;
+    width: 85vw; /* 保持分隔線寬度為視窗寬度的85% */
+    margin: 0 auto 40px auto; /* 使分隔線居中並增加下方間距 */
+}
+
+/* 活動卡片 */
+#events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 使卡片置中 */
+    width: 100%;
+}
+
+.event-card {
+    display: flex;
+    width: 35%; /* 縮小活動卡片寬度 */
+    margin: 15px 20px; /* 增加上下間距 */
+    padding: 20px 30px;
+    background-color: #f4f4f4;
+    align-items: center; /* 水平居中對齊 */
+    justify-content: center; /* 垂直居中對齊 */
+    height: 170px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease; /* 增加過渡效果 */
+}
+
+.event-card:hover {
+    background-color: rgb(226, 238, 252);
+}
+
+.event-card a {
+    display: flex;
+    text-decoration: none;
+    color: #000;
+}
+
+/* 活動海報樣式 */
+.event-poster {
+    width: 150px;  
+    height: 150px;  
+    object-fit: cover; 
+    object-position: center; 
+    margin-right: 30px;
+    display: block; 
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px; 
+}
+
+.event-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px; 
+}
+
+.event-info p {
+    margin: 2px 0;
+}

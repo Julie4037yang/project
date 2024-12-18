@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    <link rel="stylesheet" href="/css/log_in.css">
+</head>
+<body>
+    <div class="header">
+        <p class="title">
+            <a href="/">活動報名系統</a>
+        </p>
+        <div>
+            <button class="button active" onclick="window.location.href='/explore'">探索活動</button>
+            <button class="button">建立活動</button>
+            <button id="loginButton" class="button" onclick="handleLoginLogout()">登入</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="login-container">
+            <h2>請進行登入</h2>
+            <!-- 登入表單，提交到 /login 路徑 -->
+            <form class="login-form" action="/login" method="POST" onsubmit="return handleLoginSubmit(event)">
+                <input type="email" name="email" placeholder="example@gmail.com" required>
+                <button type="submit" class="button">登入 / 註冊</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/main.js" defer></script>  <!-- 放在 body 最後 -->
+</body>
+</html>

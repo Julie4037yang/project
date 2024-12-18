@@ -1,0 +1,111 @@
+/* 設定 header 的排版樣式 */
+.header {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;             
+    padding: 5px 20px;
+    background-color: #f4f4f4;       
+    width: 100%;
+    box-sizing: border-box;          
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* 設定標題文字樣式 */
+.title {
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;   
+    overflow: visible;     
+    text-overflow: clip;   
+    flex-grow: 1;           
+}
+
+/* 設定標題文字的超連結樣式 */
+.title a {
+    text-decoration: none; 
+    color: #555;
+}
+
+/* 設定標題文字懸停時的樣式 */
+.title a:hover {
+    text-decoration: underline; 
+}
+
+/* 設定按鈕樣式 */
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    flex-shrink: 0;  
+}
+
+/* 設定被激活的按鈕樣式 */
+.button.active {
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+}
+
+/* 設定按鈕的懸停效果 */
+.button:hover {
+    background-color: rgb(226, 238, 252);
+}
+
+/* 設定 header 中 div 內部元素的排列方式 */
+.header div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* 設定內容區域的布局樣式 */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 20px; 
+    min-height: 100vh; 
+}
+
+/* 設定內容區塊的排列樣式 */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 設定圖片樣式 */
+.content-wrapper img {
+    width: 450px; 
+    height: auto;
+    margin-right: 30px;
+}
+
+/* 設定內容區塊中的 div 樣式 */
+.content-wrapper div {
+    max-width: 600px;
+    text-align: center;
+}
+
+/* 設定大標題的樣式 */
+.content-wrapper h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 設定副標題的樣式 */
+.content-wrapper h3 {
+    font-size: 1.5em;
+    color: #666;
+    margin-top: 10px;
+}

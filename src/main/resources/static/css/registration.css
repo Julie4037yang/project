@@ -1,0 +1,205 @@
+/* Header 設定 */
+.header {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;             
+    padding: 5px 20px;
+    background-color: #f4f4f4;       
+    width: 100%;
+    box-sizing: border-box;         
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* 標題文字 */
+.title {
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;   
+    overflow: visible;     
+    text-overflow: clip;   
+    flex-grow: 1;           
+}
+
+/* 讓標題可以點擊 */
+.title a {
+    text-decoration: none; 
+    color: #555;
+}
+
+.title a:hover {
+    text-decoration: underline; 
+}
+
+/* 按鈕樣式 */
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    flex-shrink: 0; 
+}
+
+.button.active {
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+}
+
+.button:hover {
+    background-color: rgb(226, 238, 252);
+}
+
+/* 按鈕區域設置 */
+.header div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+/* 內容區域設置 */
+.main-content {
+    display: flex;
+    justify-content: space-between; 
+    padding: 80px 20px 20px; 
+    min-height: 100vh; 
+}
+
+/* 左側區域 */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    width: 25%; 
+    padding-right: 20px;
+    margin-left: 200px;  
+}
+
+/* 右側區域 */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    width: 50%; 
+    padding-left: 20px; 
+    margin-right: 200px; 
+}
+
+/* 活動海報 */
+.event-poster {
+    width: 80%;  
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+}
+
+/* 分隔線樣式 */
+.divider {
+    border: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+/* 字樣樣式 */
+.text-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 按鈕樣式 */
+.registration-button {
+    padding: 15px 30px; 
+    background-color: rgb(226, 238, 252);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+    margin: 20px 0;  
+}
+
+h2 {
+    font-size: 32px; 
+    font-weight: bold;
+}
+
+/* 彈出視窗的背景遮罩 */
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* 報名資料視窗內容 */
+.modal-content {
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    padding: 20px 30px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    max-width: 400px; 
+    width: 90%; 
+    text-align: center; 
+}
+
+/* 輸入框樣式 */
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 按鈕樣式 */
+.modal-content .button {
+    background-color: rgb(255, 255, 255); 
+    color: rgb(169, 169, 169); 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* 取消報名按鈕字體 */
+#cancelRegistration {
+    font-size: 12px;  
+}
+
+.modal-content .button:hover {
+    background-color: rgb(226, 238, 252); 
+    color: black;  
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+button[disabled] {
+    background-color: grey;
+    cursor: not-allowed;
+}

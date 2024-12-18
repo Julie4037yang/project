@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動報名</title>
+    <link rel="stylesheet" href="/css/registration.css">
+    <!-- 引入jQuery庫 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/registration.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <p class="title">
+            <a href="/">活動報名系統</a>
+        </p>
+        <div>
+            <button class="button active" onclick="window.location.href='/explore'">探索活動</button>
+            <button class="button">建立活動</button>
+            <button id="loginButton" class="button">登入</button>
+        </div>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <div class="main-content">
+        <!-- 左側區域，顯示活動海報與基本資訊 -->
+        <div class="left-section">
+            <!-- 動態顯示活動海報 -->
+            <img th:src="@{${event.posterUrl}}" alt="活動海報" class="event-poster">
+            <!-- 活動主辦方標題 -->
+            <div class="text-heading">主辦方</div>
+            <div class="divider"></div>
+            <!-- 顯示主辦方與聯絡資訊 -->
+            <p th:text="${event.organizer}"></p>
+            <p th:text="${event.contactInfo}"></p>
+            <br><br>
+            <!-- 活動報名人數標題 -->
+            <div class="text-heading">已報名人數</div>
+            <div class="divider"></div>
+            <!-- 顯示已報名人數與最大報名容量 -->
+            <p id="registeredCount" th:text="${event.registeredCount} + ' / ' + ${event.capacity}"></p>
+        </div>
+
+        <!-- 右側區域，顯示活動詳情與報名按鈕 -->
+        <div class="right-section">
+            <!-- 活動名稱 -->
+            <h2 th:text="${event.eventName}"></h2>
+            <!-- 活動日期 -->
+            <p><strong>日期：</strong><span th:text="${event.eventDate}"></span></p>
+            <!-- 活動時間 -->
+            <p><strong>時間：</strong><span th:text="${event.startTime} + ' - ' + ${event.endTime}"></span></p>
+            <!-- 活動地點 -->
+            <p><strong>地點：</strong><span th:text="${event.location}"></span></p>
+
+            <!-- 報名按鈕，若尚未報名顯示此按鈕 -->
+			<button class="registration-button" id="registrationButton"
+			        th:if="${!isRegistered}" style="background-color: rgb(226, 238, 252);">
+			    報名
+			</button>
+			<!-- 已報名按鈕，若已報名顯示此按鈕並禁用 -->
+			<button class="registration-button" id="registeredButton"
+			        th:if="${isRegistered}" style="background-color: grey;" disabled>
+			    已報名 !
+			</button>
+            <!-- 取消報名按鈕，當報名成功後顯示 -->
+            <span id="cancelRegistration" style="color: grey; cursor: pointer; display: none;">取消報名</span>
+            <br><br>
+            <!-- 活動簡介標題 -->
+            <div class="text-heading">活動簡介</div>
+            <div class="divider"></div>
+            <!-- 顯示活動描述 -->
+            <p class="event-description" th:text="${event.description}"></p>
+        </div>
+    </div>
+
+    <!-- 報名資料填寫視窗 -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <!-- 關閉視窗的按鈕 -->
+            <span class="close-button" id="closeModal">&times;</span> 
+            <h3>填寫報名資料</h3>
+            <!-- 報名表單 -->
+            <form id="registrationForm">
+                <!-- 姓名輸入框 -->
+                <label for="name" style="text-align: left; display: block;">姓名：</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <!-- 電話輸入框 -->
+                <label for="phone" style="text-align: left; display: block;">電話：</label>
+                <input type="text" id="phone" name="phone" required><br><br>
+                <!-- 信箱輸入框 -->
+                <label for="email" style="text-align: left; display: block;">信箱：</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <!-- 提交報名資料的按鈕 -->
+                <button type="submit" class="button">確認</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

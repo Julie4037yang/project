@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 設置文檔字符集為 UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- 設置視口，確保在移動設備上有良好的顯示效果 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 設置網頁標題 -->
+    <title>活動報名系統</title>
+    <!-- 引入外部樣式表 -->
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <!-- 頁面頭部 -->
+    <div class="header">
+        <p class="title">
+            <!-- 系統標題，點擊可返回首頁 -->
+            <a href="/">活動報名系統</a>
+        </p>
+        <div>
+            <!-- 探索活動按鈕，點擊跳轉到活動列表頁 -->
+            <button class="button active" onclick="window.location.href='/explore'">探索活動</button>
+            <!-- 建立活動按鈕 -->
+            <button class="button">建立活動</button>
+            <!-- 登入/登出按鈕，會根據用戶狀態顯示不同內容 -->
+            <button id="loginButton" class="button" onclick="handleLoginLogout()">登入</button>
+        </div>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <div class="main-content">
+        <div class="content-wrapper">
+            <!-- 顯示活動圖片 -->
+            <img src="/images/image_1.jpg" alt="活動圖片">
+            <div>
+                <!-- 系統名稱 -->
+                <h1>活動報名系統</h1>
+                <div class="spacer"></div>
+                <!-- 系統描述文字 -->
+                <h3>建立活動、報名活動</h3>
+                <h3>尋找朋友一起創造難忘的回憶吧!</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入外部 JavaScript，放在 body 最後，以確保頁面加載後再執行 -->
+    <script src="/js/main.js" defer></script>
+</body>
+</html>

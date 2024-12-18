@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 父級項目，定義了 Spring Boot 的相關設定 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.0</version>
+        <relativePath/> <!-- 默認父級路徑 -->
+    </parent>
+
+    <groupId>com.example</groupId> <!-- 定義組ID -->
+    <artifactId>project</artifactId> <!-- 定義工件ID -->
+    <version>0.0.1-SNAPSHOT</version> <!-- 定義項目的版本 -->
+    <name>project</name> <!-- 項目名稱 -->
+    <description>Demo project for Spring Boot</description> <!-- 項目描述 -->
+    <url/> <!-- 項目網址，可選 -->
+    
+    <!-- 設定開發者相關資訊 -->
+    <developers>
+        <developer/>
+    </developers>
+
+    <!-- 設定源代碼管理相關資訊 -->
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+
+    <!-- 項目的相關屬性 -->
+    <properties>
+        <java.version>21</java.version> <!-- 使用 Java 21 -->
+    </properties>
+
+    <!-- 項目的依賴 -->
+    <dependencies>
+        <!-- Spring Data JPA，支持 JPA 持久化技術 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Thymeleaf 預設模板引擎支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- Thymeleaf 5 的 Spring 整合 -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+            <version>3.0.12.RELEASE</version> <!-- 使用的 Thymeleaf 版本 -->
+        </dependency>
+
+        <!-- Spring Security Web 模組，用於網頁應用的安全管理 -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Web 模組，支持 web 應用開發 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Session 用於管理 HTTP 會話 -->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>
+
+        <!-- Spring Boot DevTools 用於開發時的熱加載支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope> <!-- 僅在運行時使用 -->
+            <optional>true</optional> <!-- 標記為可選依賴 -->
+        </dependency>
+
+        <!-- MySQL 連接器，用於連接 MySQL 數據庫 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope> <!-- 僅在運行時使用 -->
+        </dependency>
+
+        <!-- Spring Boot 測試模組，用於單元測試 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope> <!-- 僅在測試時使用 -->
+        </dependency>
+
+        <!-- Spring Boot Mail 模組，支持郵件發送功能 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- 項目構建配置 -->
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven 插件，用於打包和運行 Spring Boot 應用 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

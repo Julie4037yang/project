@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索活動</title>
+    <link rel="stylesheet" href="../css/explore.css">
+</head>
+<body>
+    <div class="header">
+        <p class="title">
+            <a href="/">活動報名系統</a>
+        </p>
+        <div>
+            <button class="button active" onclick="window.location.href='/explore'">探索活動</button>
+            <button class="button" onclick="window.location.href='/create'">建立活動</button>
+            <button class="button" id="loginButton" onclick="handleLoginLogout()">登入</button>
+        </div>
+    </div>
+
+    <!-- 主要內容區域 -->
+    <div class="main-content">
+        <div class="content-wrapper">
+            <div class="left-section">
+                <h1 class="heading">所有活動</h1>
+                <div class="spacer"></div>
+                <!-- 分隔線 -->
+                <hr class="divider">
+            </div>
+        </div>
+
+        <!-- 活動列表容器 -->
+        <div id="events-container">
+            <!-- 左側活動卡片 -->
+            <div class="event-card left" th:each="event : ${events}" th:if="${event.id % 2 != 0}">
+                <a th:href="@{/registration/{eventId}(eventId=${event.id})}">
+                    <img th:src="@{${event.posterUrl}}" alt="活動海報" class="event-poster">
+                    <div class="event-info">
+                        <h3 th:text="${event.eventName}"></h3>
+                        <p><strong>日期：</strong><span th:text="${event.eventDate}"></span></p>
+                        <p>
+                            <strong>時間：</strong>
+                            <span th:text="${event.startTime}"></span> - 
+                            <span th:text="${event.endTime}"></span>
+                        </p>
+                        <p><strong>地點：</strong><span th:text="${event.location}"></span></p>
+                    </div>
+                </a>
+            </div>
+            <!-- 右側活動卡片-->
+            <div class="event-card right" th:each="event : ${events}" th:if="${event.id % 2 == 0}">
+                <a th:href="@{/registration/{eventId}(eventId=${event.id})}">
+                    <img th:src="@{${event.posterUrl}}" alt="活動海報" class="event-poster">
+                    <div class="event-info">
+                        <h3 th:text="${event.eventName}"></h3>
+                        <p><strong>日期：</strong><span th:text="${event.eventDate}"></span></p>
+                        <p>
+                            <strong>時間：</strong>
+                            <span th:text="${event.startTime}"></span> - 
+                            <span th:text="${event.endTime}"></span>
+                        </p>
+                        <p><strong>地點：</strong><span th:text="${event.location}"></span></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入外部 JavaScript 檔案 -->
+    <script src="../js/explore.js" defer></script>
+</body>
+</html>
